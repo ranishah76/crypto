@@ -56,7 +56,7 @@ class VisualisationIframe extends Component {
             </Grid.Row>
          </Grid>
            <h3 className="blocks"> Currency: {this.state.name} | Circulating Supply: { this.state.supply.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} {this.state.symbol}</h3>
-           <Iframe width="2000px" height="800px" url={`http://localhost:3001/${this.state.name}`} />
+           <Iframe width="2000px" height="800px" url={`http://localhost:3000/${this.state.name}`} />
         </div>
      )
    }
