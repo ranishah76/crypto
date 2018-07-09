@@ -1,0 +1,256 @@
+<html>
+	<head>
+    <style>
+			html, body {
+				height: 100%;
+			}
+			body {
+				background-color: #000000;
+				margin: 0;
+				font-family: Helvetica, sans-serif;;
+				overflow: hidden;
+			}
+			a {
+				color: #ffffff;
+			}
+
+			#menu {
+				position: absolute;
+				bottom: 20px;
+				width: 100%;
+				text-align: center;
+			}
+			.element {
+				width: 180px;
+				height: 160px;
+				box-shadow: 0px 0px 12px rgba(0, 236,126,101);
+				border: 1px solid rgba(127,255,255,0.25);
+				text-align: center;
+				cursor: default;
+			}
+			.element:hover {
+				box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+				border: 1px solid rgba(127,255,255,0.75);
+			}
+				.element .number {
+					position: absolute;
+					top: 20px;
+					right: 20px;
+					font-size: 12px;
+				}
+				.element .symbol {
+					position: absolute;
+					top: 40px;
+					left: 0px;
+					right: 0px;
+					font-size: 60px;
+					/* font-weight: bold; */
+					color: rgba(255,255,255,0.75);
+					text-shadow: 0 0 10px rgba(0,255,255,0.95);
+				}
+				.element .details {
+					position: absolute;
+					bottom: 15px;
+					left: 0px;
+					right: 0px;
+					font-size: 12px;
+					color: rgba(127,255,255,0.75);
+				}
+			button {
+				color: white;
+				background: transparent;
+				outline: 1px solid rgba(127,255,255,0.75);
+				border: 0px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.js"></script>
+    <script src="./TrackballControls.js"></script>
+    <script src="./CSS3DRenderer.js"></script>
+
+    <div id="container"></div>
+    <div id="menu">
+      <button id="grid">GRID</button>
+			<button id="sphere">SPHERE</button>
+
+    </div>
+
+		<script>
+
+  var table = ["BTC", "Bitcoin", 7586.65, 1.68, 1,
+	"ETH", "Ethereum", 597.842, 4.02, 2,
+	 "XRP", "Ripple", 0.666457, 8.58, 3,
+	 "BCH", "Bitcoin Cash", 1115.93, 12.93, 4,
+	 "EOS", "EOS", 13.8148, 13.96, 5,
+	 "LTC", "Litecoin", 119.1, 0.55, 6,
+	 "XLM", "Stellar", 0.29027, 0.58, 7,
+	 "ADA", "Cardano", 0.203982, -7.64, 8,
+	 "MIOTA", "IOTA", 1.69478, -8.06, 9,
+	 "TRX", "TRON", 0.0571866, -1.21, 10,
+	 "NEO", "NEO", 52.4179, -3.27, 11,
+	 "XMR", "Monero", 158.771, 2.21, 12,
+	 "USDT", "Tether", 1.00623, 0.65, 13,
+	 "DASH", "Dash", 306.002, 0.13, 14,
+	 "XEM", "NEM", 0.252257, 0.25, 15,
+	 "VEN", "VeChain", 4.06059, 19.56, 16,
+	 "BNB", "Binance Coin", 16.2434, 16.59, 17,
+	 "ETC", "Ethereum Classic", 15.3521, 0.61, 18,
+	 "ONT", "Ontology", 8.25256, 16.6, 19,
+	 "QTUM", "Qtum", 13.3582, -3.33, 20,
+	 "ZEC", "Zcash", 199.473, -0.79, 22,
+	 "ICX", "ICON", 2.12572, 1.47, 23,
+	 "BCN", "Bytecoin", 0.00414637,-13.7, 24,
+	 "LSK", "Lisk", 6.41227, -10.07, 25,
+	 "DCR", "Decred", 94.2111, -0.77, 26]
+
+  // var table =[]
+  //    //
+  //    fetch('https://api.coinmarketcap.com/v2/ticker/?limit=40&structure=tableay')
+  //    .then(res => res.json())
+  //    .then(json => mappingtable(json.data))
+	//
+  //    var table =[]
+	//
+  //    function mappingtable(array)  {
+  //     return array.map(crypto => {
+  //        table.push(crypto["symbol"])
+  //        table.push(crypto["name"])
+  //        table.push(crypto["quotes"]["USD"]["price"])
+  //        table.push(crypto["quotes"]["USD"]["percent_change_7d"])
+  //        table.push(crypto["rank"])
+  //      })
+	// 		 console.log(table)
+  //      return table
+  //    }
+
+    var camera, scene, renderer;
+    			var controls;
+    			var objects = [];
+    			var targets = { grid: [], sphere: [] };
+
+    			function init() {
+    				camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+    				camera.position.z = 3000;
+    				scene = new THREE.Scene();
+            scene.background = new THREE.Color( 0xff0000 );
+
+    				for ( var i = 0; i < table.length; i += 5 ) {
+    					var element = document.createElement( 'div' );
+    					element.className = 'element';
+    					var number = document.createElement( 'div' );
+    					number.className = 'number';
+    					number.textContent = (i/5) + 1;
+    					element.appendChild( number );
+    					var symbol = document.createElement( 'div' );
+    					symbol.className = 'symbol';
+    					symbol.textContent = table[ i ];
+    					element.appendChild( symbol );
+    					var details = document.createElement( 'div' );
+    					details.className = 'details';
+    					details.innerHTML = table[ i + 1 ] + '<br>' + "$" + table[ i + 2 ] + '<br>' + "%" + table[ i + 3 ] + "(24h)";
+
+              if (table[ i + 3 ] > 0) {
+                element.style.backgroundColor = 'rgba(0,128, 0, 0.2';
+                number.style.color = 'rgba(0,128, 0, 0.2';
+
+              } else {
+                element.style.backgroundColor = 'rgba(255,0, 0, 0.2';
+              }
+    					element.appendChild( details );
+    					var object = new THREE.CSS3DObject( element );
+
+    					scene.add( object );
+    					objects.push( object );
+
+          }
+
+    				// grid
+    				for ( var i = 0; i < objects.length; i ++ ) {
+    					var object = new THREE.Object3D();
+              //5 rows
+    					object.position.x = ( i % 5 ) * 300 - 1000;
+    					object.position.y = ( Math.floor( i / 5 ) * 400 ) - 200;
+    					object.position.z = ( Math.floor( i / 5 ) ) * 1000;
+    					targets.grid.push( object );
+    				}
+
+						// sphere
+						var vector = new THREE.Vector3();
+						var spherical = new THREE.Spherical();
+						for ( var i = 0, l = objects.length; i < l; i ++ ) {
+							var phi = Math.acos( -1 + ( 2 * i ) / l );
+							var theta = Math.sqrt( l * Math.PI ) * phi;
+							var object = new THREE.Object3D();
+							spherical.set( 800, phi, theta );
+							object.position.setFromSpherical( spherical );
+							vector.copy( object.position ).multiplyScalar( 2 );
+							object.lookAt( vector );
+							targets.sphere.push( object );
+						}
+
+    				//
+    				renderer = new THREE.CSS3DRenderer({ alpha: true });
+    				renderer.setSize( window.innerWidth, window.innerHeight );
+    				document.getElementById( 'container' ).appendChild( renderer.domElement );
+    				//
+    				controls = new THREE.TrackballControls( camera, renderer.domElement );
+    				controls.minDistance = 100;
+    				controls.addEventListener( 'change', render );
+
+    				var button = document.getElementById( 'grid' );
+    				button.addEventListener( 'click', function ( event ) {
+    					transform( targets.grid, 2000 );
+    				}, false );
+						var button = document.getElementById( 'sphere' );
+						button.addEventListener( 'click', function ( event ) {
+							transform( targets.sphere, 2000 );
+						}, false );
+
+    				//
+    				window.addEventListener( 'resize', onWindowResize, false );
+          }
+
+          init();
+          animate();
+
+    			function transform( targets, duration ) {
+    				for ( var i = 0; i < objects.length; i ++ ) {
+    					var object = objects[ i ];
+    					var target = targets[ i ];
+    					new TWEEN.Tween( object.position )
+    						.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+    						.easing( TWEEN.Easing.Exponential.InOut )
+    						.start();
+    					new TWEEN.Tween( object.rotation )
+    						.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+    						.easing( TWEEN.Easing.Exponential.InOut )
+    						.start();
+    				}
+    				new TWEEN.Tween( this )
+    					.to( {}, duration * 2 )
+    					.onUpdate( render )
+    					.start();
+    			}
+
+    			function onWindowResize() {
+    				camera.aspect = window.innerWidth / window.innerHeight;
+    				camera.updateProjectionMatrix();
+    				renderer.setSize( window.innerWidth, window.innerHeight );
+    				render();
+    			}
+    			function animate() {
+    				requestAnimationFrame( animate );
+    				TWEEN.update();
+    				controls.update();
+    			}
+    			function render() {
+    				renderer.render( scene, camera );
+    			}
+		</script>
+	</body>
+</html>

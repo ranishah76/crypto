@@ -1,0 +1,410 @@
+.signin {
+  padding-left: 500px
+}
+
+
+.card:hover {
+  box-shadow: 0px 0px 12px 	rgb(255,127,80);
+  border: 1px solid rgb(255,127,80);
+}
+
+.linechart {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 60%;
+}
+
+.buttons {
+  display: inline-block;
+}
+
+.bitcoinimage {
+  padding-top: 40px;
+  height: 100px;
+}
+
+.marketcap {
+  font-size: 8px;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+}
+
+.blocks {
+  text-align: center;
+  font-size: 15px;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.extremefomo {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding-top: 100px;
+  font-family: 'Poiret One', cursive;
+  font-size: 65px;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.ui.centered.grid>.column:not(.aligned):not(.justified):not(.row), .ui.centered.grid>.row>.column:not(.aligned):not(.justified), .ui.grid .centered.row>.column:not(.aligned):not(.justified) {
+  text-align: center;
+}
+.ui.celled.table tr td, .ui.celled.table tr th {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.lowerheader {
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  font-size: 30px;
+  color: white;
+}
+
+.hello {
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  display: inline;
+}
+
+
+.money{
+  text-align: center;
+  padding-left: 550px;
+  position: relative;
+}
+.bitcoin{
+  text-align: center;
+  padding-left: 630px;
+}
+@media all and (min-width: 481px) and (max-width: 840px) {
+    .header-header {
+        height: 65vh;
+        width: 100%;
+    }
+}
+
+.topheader{
+  background-color: black;
+}
+
+.login {
+  padding-top: 10px;
+  padding-left: 230px;
+  font-family: 'Poiret One', cursive;
+  font-size: 65px;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.fomobutton {
+      font-size: 11px;
+      font-weight: 200;
+      color: hsla(0,0%,100%,.6);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      transition: none 33ms cubic-bezier(.3,0,.7,1);
+      transition-property: all;
+      color: black;
+      margin-top: 16px;
+      position: relative;
+      margin-bottom: 0;
+      text-align: center;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      border-radius: 300px;
+      padding: 13px;
+      min-width: 130px;
+      white-space: normal;
+      will-change: transform;
+      line-height: 1.6;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+}
+
+.whitefont {
+  font-family: 'Poiret One', cursive;
+  color: white;
+}
+.ui.centered.grid, .ui.centered.grid>.row, .ui.grid>.centered.row {
+  padding-top: 5px;
+}
+
+.ui.card {
+  background-color: black;
+  color: white;
+  border-radius: 100px;
+}
+.ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui) {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+}
+.ui.card .meta, .ui.cards>.card .meta {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.ui.card>.content>.header+.description, .ui.card>.content>.meta+.description, .ui.cards>.card>.content>.header+.description, .ui.cards>.card>.content>.meta+.description {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+}
+.ui.card>.content>.description, .ui.cards>.card>.content>.description {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+}
+.ui.mini.button, .ui.mini.buttons .button, .ui.mini.buttons .or {
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  transition: none 33ms cubic-bezier(.3,0,.7,1);
+  transition-property: all;
+  color: black;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  background-image: none;
+  border: 0;
+  border-radius: 500px;
+  padding: 8px;
+  min-width: 130px;
+  white-space: normal;
+  will-change: transform;
+  line-height: 1.6;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ui.mini.button, .ui.mini.buttons .button, .ui.mini.buttons .or:hover {
+  background-color: white; /* Green */
+  color: grey;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0px 0px 12px 	rgb(255,127,80);
+  border: 1px solid rgb(255,127,80);
+}
+
+
+
+.ui.modal>.icon:first-child+*, .ui.modal>:first-child:not(.icon) {
+  background-color: black;
+  color: white;
+}
+
+.ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  color: white;
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.ui.modal>.content>.description {
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+.ui,header{
+  color: white;
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.ui.menu {
+  background-color:	black;
+  color: grey;
+  font-family: 'Poiret One', cursive;
+}
+
+.ui.menu:not(.vertical) .item{
+  color: white;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  }
+
+.ui.menu:last-child{
+  color: white
+}
+
+.ui.center.aligned.header, .ui.centered.header {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  line-height: 14px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.ui.red.segment:not(.inverted) {
+  color: white;
+  background-color: black;
+}
+.ui.green.segment:not(.inverted) {
+  color: white;
+  background-color: black;
+}
+.ui.blue.segment:not(.inverted) {
+  color: white;
+  background-color: black;
+}
+.newform {
+  padding-top: 30px;
+  padding-left: 230px;
+  margin: 0 auto; /* the bottom margin is the negative value of the footer's height */
+}
+
+.ui.button, .ui.buttons .button, .ui.buttons .or:hover {
+  font-size: 11px;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  transition: none 33ms cubic-bezier(.3,0,.7,1);
+  transition-property: all;
+  color: black;
+  margin-top: 16px;
+  position: relative;
+  margin-bottom: 0;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  border-radius: 300px;
+  padding: 13px;
+  min-width: 130px;
+  white-space: normal;
+  will-change: transform;
+  line-height: 1.6;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.visualiser {
+  text-align: center;
+  postion: relative;
+  height: 200px;
+  padding-left: 850px;
+}
+
+.ui.button {
+  font-size: 11px;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  transition: none 33ms cubic-bezier(.3,0,.7,1);
+  transition-property: all;
+  color: black;
+  margin-top: 16px;
+  position: relative;
+  margin-bottom: 0;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  border-radius: 300px;
+  padding: 13px;
+  min-width: 130px;
+  white-space: normal;
+  will-change: transform;
+  line-height: 1.6;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ui.inverted.sortable.table thead th {
+  color: red;
+}
+
+.multichart {
+  width: 600px;
+  display: inline;
+}
+
+
+.gainers {
+    background-color: white;
+    color: black;
+    width: 3%;
+    border: 2px solid blue; /* Green */
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.gainers:hover {
+    background-color: blue; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.topheader {
+  padding-top: 8px
+}
+
+.choice {
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  background: black;
+}
+
+.dashboard {
+  background-color: black;
+  background: black;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 1300px;
+}
+
+.signin {
+  font-family: 'Quicksand', sans-serif;
+  height: 1000px;
+  background-image: url(./assets/backgroundollar.jpeg);
+  background-size: cover;
+  color: white;
+}
