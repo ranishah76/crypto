@@ -11,8 +11,7 @@ he main goal of this project was to use ReactJS, use visualisation libraries and
 
 
 <h2> Installation </h2>
-- yarn 
-- yarn start 
+<ul><li>yarn</li><li>yarn start</li></ul>
 
 <h2>Tech Used</h2>
 JavaScript, React, APIs: coinmarketcap, cryptocurrencycompare, A-Frame, chartJs, custom CSS (+semantic UI)
