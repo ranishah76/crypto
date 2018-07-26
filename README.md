@@ -1,4 +1,4 @@
-Crypto Visualiser 
+<h2> Crypto Visualiser </h2>
 
 A web application which allows you to view cryptocurrency data in a table, chart format. With other features incl. past historical analysis, and webVR to visualise the amount of coins mined. 
 
