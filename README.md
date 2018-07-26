@@ -7,7 +7,7 @@ This is a student project, created for educational purposes. T
 he main goal of this project was to use ReactJS, use visualisation libraries and call APIs on the front-end.
 
 Demo
-https://github.com/ranishah76/crypto/blob/master/20180726_065003.gif
+<img src="https://github.com/ranishah76/crypto/blob/master/20180726_065003.gif">
 
 
 Installation
