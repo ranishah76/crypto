@@ -11,8 +11,8 @@ Demo
 
 
 Installation
-yarn 
-yarn start 
+- yarn 
+- yarn start 
 
 Tech Used
 JavaScript, React, APIs: coinmarketcap, cryptocurrencycompare, A-Frame, chartJs, custom CSS (+semantic UI)
